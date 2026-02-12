@@ -1,0 +1,115 @@
+
+
+index.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blood Need Application</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a href="#" onclick="showForm()">Click here to fill the Blood Need Form</a>
+  <div class="container" id="form-section">
+    <h1>Blood Need Form</h1>
+    <form id="blood-form">
+      <label for="name">Name</label>
+      <input type="text" id="name" placeholder="Enter full name" required>
+      
+      <label for="age">Age</label>
+      <input type="number" id="age" placeholder="Enter needer age" required>
+      
+      <label for="address">Address</label>
+      <textarea id="address" placeholder="Where you can receive" rows="4" required></textarea>
+      
+      <label for="phone">Contact number</label>
+      <input type="tel" id="phone-1" placeholder="Enter number 1" required>
+      <input type="tel" id="phone-2" placeholder="Number 2">
+      
+      <label for="blood-group">Select Blood group</label>
+      <select id="blood-group" required>
+        <option value="">Select</option>
+        <option value="A+">A Positive</option>
+        <option value="B+">B Positive</option>
+        <option value="O+">O Positive</option>
+        <option value="AB+">AB Positive</option>
+        <option value="A-">A Negative</option>
+        <option value="B-">B Negative</option>
+        <option value="O-">O Negative</option>
+        <option value="AB-">AB Negative</option>
+      </select>
+      
+      <label for="email">E-mail ID</label>
+      <input type="email" id="email" placeholder="Your e-mail id">
+      
+      <label for="quantity">Required quantity</label>
+      <input type="number" id="quantity" placeholder="In milliliters">
+      
+      <label for="payment">Mode of payment</label>
+      <select id="payment">
+        <option value="">Select</option>
+        <option value="phone pay">Phone Pay</option>
+        <option value="cash on delivery">Cash On Delivery</option>
+      </select>
+      
+      <button type="submit">Apply</button>
+    </form>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+
+style.css
+
+body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  background-color: light green;
+}
+.container {
+  max-width: 500px;
+  margin: 0 auto;
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  display: none;
+}
+label {
+  font-weight: bold;
+  display: block;
+  margin-top: 10px;
+}
+input, select, textarea {
+  width: 100%;
+  padding: 8px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 1px solid ;
+  border-radius: 4px;
+}
+button {
+  padding: 10px 20px;
+  background-color: purple;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  margin-top: 10px;
+}
+button:hover {
+  background-color: purple;
+}
+script.js
+
+function showForm() {
+  document.getElementById('form-section').style.display = 'block';
+}
+
+document.getElementById('blood-form').addEventListener('submit', function(e) {
+  e.preventDefault();
+  alert('Form submitted!');
+});
